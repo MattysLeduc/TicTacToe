@@ -8,8 +8,8 @@
         Title="Startup" Height="450" Width="800">
     <Grid>
         <Label x:Name="lblTitle" Content="Choose X or O to continue (X usually plays first)" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Height="29" Width="272"/>
-        <Image x:Name="imgX" HorizontalAlignment="Left" Height="100" Margin="150,193,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\Mattys\source\repos\TicTacToe\TicTacToe\Images\tic-tac-toe_x.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
-        <Image x:Name="imgO" HorizontalAlignment="Left" Height="100" Margin="531,193,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\Mattys\source\repos\TicTacToe\TicTacToe\Images\tic-tac-toe_o.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image x:Name="imgStartX" HorizontalAlignment="Left" Height="100" Margin="150,193,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\Mattys\source\repos\TicTacToe\TicTacToe\Images\tic-tac-toe_x.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image x:Name="imgStartO" HorizontalAlignment="Left" Height="100" Margin="531,193,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\Mattys\source\repos\TicTacToe\TicTacToe\Images\tic-tac-toe_o.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
 
     </Grid>
 </Window>

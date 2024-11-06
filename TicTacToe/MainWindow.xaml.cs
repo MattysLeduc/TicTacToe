@@ -24,5 +24,10 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            img_r1_c1 = 
+        }
     }
 }
