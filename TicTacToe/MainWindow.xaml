@@ -26,7 +26,7 @@
                 </ImageBrush.Transform>
             </ImageBrush>
         </Grid.Background>
-        <Image x:Name="img_r1_c1" HorizontalAlignment="Left" Height="125" Margin="0,0,0,0" VerticalAlignment="Top" Width="125" Source="C:\Users\Mattys\source\repos\TicTacToe\TicTacToe\Images\Blank_image.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+        <Image x:Name="img_r1_c1" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\Mattys\source\repos\TicTacToe\TicTacToe\Images\Blank_image.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
 
     </Grid>
 </Window>

@@ -27,7 +27,7 @@ namespace TicTacToe
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            img_r1_c1 = 
+            img_r1_c1.Source = new BitmapImage(new Uri("Images/tic-tac-toe_x.png", UriKind.Relative));
         }
     }
 }
