@@ -26,7 +26,17 @@
                 </ImageBrush.Transform>
             </ImageBrush>
         </Grid.Background>
-        <Image x:Name="img_r1_c1" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\Mattys\source\repos\TicTacToe\TicTacToe\Images\Blank_image.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+        <Image x:Name="img_r1_c1" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="0" Grid.Column="0"/>
+        <Image x:Name="img_r1_c2" HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="0" Grid.Column="1" />
+        <Image x:Name="img_r1_c3" HorizontalAlignment="Left" Height="100" Margin="15,10,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="0" Grid.Column="2" />
+        <Image x:Name="img_r2_c1" HorizontalAlignment="Center" Height="100" Margin="0,15,10,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="1" Grid.Column="0"/>
+        <Image x:Name="img_r2_c2" HorizontalAlignment="Center" Height="100" Margin="0,12,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="1" Grid.Column="1" />
+        <Image x:Name="img_r2_c3" HorizontalAlignment="Left" Height="100" Margin="15,15,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="1" Grid.Column="2" />
+        <Image x:Name="img_r3_c1" HorizontalAlignment="Left" Height="100" Margin="10,15,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="2" Grid.Column="0"/>
+        <Image x:Name="img_r3_c2" HorizontalAlignment="Center" Height="100" Margin="0,15,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="2" Grid.Column="1" />
+        <Image x:Name="img_r3_c3" HorizontalAlignment="Center" Height="100" Margin="10,15,0,0" VerticalAlignment="Top" Width="100" Source="Images\Blank_image.png" MouseLeftButtonDown="Tile_Click" Grid.Row="2" Grid.Column="2" />
+        <Button x:Name="btn_Restart" Grid.Column="1" Grid.Row="3" Content="Restart" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="28" Width="61" Margin="0,63,0,0"/>
+        <Label x:Name="lbl_TurnLabel" Grid.Column="1" Content="Label" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

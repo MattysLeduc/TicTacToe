@@ -20,14 +20,45 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private Board gameBoard;
+        private PlayerEnum currentPlayer = PlayerEnum.X;
+        
         public MainWindow()
         {
             InitializeComponent();
+            gameBoard = new Board();
+            UpdateTurnLabel();
         }
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+       
+
+        private void Tile_Click(object sender, MouseButtonEventArgs e)
         {
-            img_r1_c1.Source = new BitmapImage(new Uri("Images/tic-tac-toe_x.png", UriKind.Relative));
+            var tile = sender as Image;
+            int row = Grid.GetRow(tile);
+            int col = Grid.GetColumn(tile);
+
+            if (gameBoard.Select(row, col, currentPlayer))
+            {
+                tile.Source = new BitmapImage(new Uri($"images/{currentPlayer}.png", UriKind.Relative));
+
+                if (gameBoard.CheckWin(out PlayerEnum winner) && winner != PlayerEnum.NONE)
+                {
+                    MessageBox.Show($"{winner} wins!");
+                    gameBoard.Reset();
+                }
+                else
+                {
+                    currentPlayer = currentPlayer == PlayerEnum.X ? PlayerEnum.O : PlayerEnum.X;
+                    UpdateTurnLabel();
+                }
+            }
+        }
+
+        private void UpdateTurnLabel()
+        {
+           lbl_TurnLabel.Content = $"Turn: Player {currentPlayer}";
         }
     }
 }
