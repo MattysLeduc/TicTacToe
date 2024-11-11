@@ -13,14 +13,15 @@ namespace TicTacToe
 
         public Board()
         {
-            board = new PlayerEnum[3,3];
+
             Reset();
         }
 
         public bool Select(int row, int col, PlayerEnum player)
         {
-            if (board[row, col] == player)
+            if (board[row, col] == PlayerEnum.NONE)
             {
+                board[row, col] = player;
                 return true;
             }
             return false;
