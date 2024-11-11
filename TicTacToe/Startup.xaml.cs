@@ -19,14 +19,28 @@ namespace TicTacToe
     /// </summary>
     public partial class Startup : Window
     {
+        public string SelectedPlayer { get; private set; }
+
         public Startup()
         {
             InitializeComponent();
         }
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ButtonX_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+            SelectedPlayer = "X";
+            StartGame();
+        }
+
+        private void ButtonO_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedPlayer = "O";
+            StartGame();
+        }
+
+        private void StartGame()
+        {
+            MainWindow mainWindow = new MainWindow(SelectedPlayer);
             mainWindow.Show();
             this.Close();
         }

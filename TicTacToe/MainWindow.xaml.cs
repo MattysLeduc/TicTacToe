@@ -24,7 +24,7 @@ namespace TicTacToe
         private Board gameBoard;
         private PlayerEnum currentPlayer = PlayerEnum.X;
         
-        public MainWindow()
+        public MainWindow(string startingPlayer)
         {
             InitializeComponent();
             gameBoard = new Board();
