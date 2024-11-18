@@ -7,12 +7,6 @@ Welcome to the **WPF Tic Tac Toe Game**, a fun and interactive implementation of
 1. [About the Project](#about-the-project)
 2. [Features](#features)
 3. [Getting Started](#getting-started)
-4. [Gameplay](#gameplay)
-5. [Project Structure](#project-structure)
-6. [Future Enhancements](#future-enhancements)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Acknowledgments](#acknowledgments)
 
 ---
 
