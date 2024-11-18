@@ -119,5 +119,10 @@ namespace TicTacToe
             lbl_OGamesWon.Content = $"Games Won: {gamesWonO}";
             lbl_OWinRatio.Content = $"Win Ratio: {(gamesPlayedO > 0 ? (gamesWonO * 100 / gamesPlayedO) : 0)}%";
         }
+
+        private void Btn_StopGame_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
