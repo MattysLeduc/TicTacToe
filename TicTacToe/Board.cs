@@ -78,8 +78,43 @@ namespace TicTacToe
             return true;
         }
 
+        public bool CheckEndCondition(out PlayerEnum winner)
+        {
+            if (CheckWin(out winner))
+            {
+
+                Reset();
+                return true;
+            }
+            else if (CheckDraw())
+            {
+
+                winner = PlayerEnum.NONE;
+                Reset();
+                return true;
+            }
+
+
+            winner = PlayerEnum.NONE;
+            return false;
+        }
+
+
 
         public void Reset()
+        {
+            for (int x = 0; x < 3; x++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    board[x, y] = PlayerEnum.NONE;
+                }
+            }
+        }
+    }
+}
+
+public void Reset()
         {
             for (int x = 0; x < 3; x++)
             {
