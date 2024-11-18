@@ -25,6 +25,13 @@ namespace TicTacToe
         private Board gameBoard;
         private PlayerEnum currentPlayer = PlayerEnum.X;
 
+        //Player Stats Initialization
+        private int gamesplayedX = 0;
+        private int gamesWonX = 0;
+
+        private int gamesPlayedO = 0;
+        private int gamesWonO = 0;
+
         public MainWindow(string startingPlayer)
         {
             InitializeComponent();
@@ -53,14 +60,30 @@ namespace TicTacToe
                     if (winner != PlayerEnum.NONE)
                     {
                         MessageBox.Show($"{winner} wins!");
+
+                        if (winner == PlayerEnum.X)
+                        {
+                            gamesplayedX++;
+                            gamesWonX++;
+                            gamesPlayedO++;
+                        }
+                        else
+                        {
+                            gamesPlayedO++;
+                            gamesWonO++;
+                            gamesplayedX++;
+                        }
                     }
                     else
                     {
                         MessageBox.Show("It's a draw!");
+                        gamesplayedX++;
+                        gamesPlayedO++;
                     }
 
                     gameBoard.Reset();
                     ResetTiles();
+                    UpdateStats();
                 }
                 else
                 {
@@ -84,6 +107,17 @@ namespace TicTacToe
         private void UpdateTurnLabel()
         {
             lbl_TurnLabel.Content = $"Turn: Player {currentPlayer}";
+        }
+
+        private void UpdateStats()
+        {
+            lbl_XGamesPlayed.Content = $"Games Played: {gamesplayedX}";
+            lbl_XGamesWon.Content = $"Games Won: {gamesWonX}";
+            lbl_XWinRatio.Content = $"Win Ratio: {(gamesplayedX > 0 ? (gamesWonX * 100 / gamesplayedX) : 0)}%";
+
+            lbl_OGamesPlayed.Content = $"Games Played: {gamesPlayedO}";
+            lbl_OGamesWon.Content = $"Games Won: {gamesWonO}";
+            lbl_OWinRatio.Content = $"Win Ratio: {(gamesPlayedO > 0 ? (gamesWonO * 100 / gamesPlayedO) : 0)}%";
         }
     }
 }
