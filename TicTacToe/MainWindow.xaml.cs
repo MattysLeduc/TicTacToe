@@ -122,7 +122,18 @@ namespace TicTacToe
 
         private void Btn_StopGame_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            
+            MessageBoxResult result = MessageBox.Show(
+                "Do you want to stop the game?",
+                "Stopping Game",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
