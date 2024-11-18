@@ -34,7 +34,7 @@ namespace TicTacToe
             ResetTiles();
         }
 
-       
+
 
         private void Tile_Click(object sender, MouseButtonEventArgs e)
         {
@@ -44,17 +44,21 @@ namespace TicTacToe
 
             if (gameBoard.Select(row, col, currentPlayer))
             {
-                if(currentPlayer == PlayerEnum.X)
+                tile.Source = new BitmapImage(new Uri(currentPlayer == PlayerEnum.X
+                    ? "images/tic-tac-toe_x.png"
+                    : "images/tic-tac-toe_o.png", UriKind.Relative));
+
+                if (gameBoard.CheckEndCondition(out PlayerEnum winner))
                 {
-                    tile.Source = new BitmapImage(new Uri($"images/tic-tac-toe_x.png", UriKind.Relative));
-                }
-                else
-                {
-                    tile.Source = new BitmapImage(new Uri($"images/tic-tac-toe_o.png", UriKind.Relative));
-                }
-                if (gameBoard.CheckWin(out PlayerEnum winner) && winner != PlayerEnum.NONE)
-                {
-                    MessageBox.Show($"{winner} wins");
+                    if (winner != PlayerEnum.NONE)
+                    {
+                        MessageBox.Show($"{winner} wins!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("It's a draw!");
+                    }
+
                     gameBoard.Reset();
                     ResetTiles();
                 }
@@ -63,7 +67,6 @@ namespace TicTacToe
                     currentPlayer = currentPlayer == PlayerEnum.X ? PlayerEnum.O : PlayerEnum.X;
                     UpdateTurnLabel();
                 }
-                
             }
         }
 
